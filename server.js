@@ -49,10 +49,16 @@ app.get('/details/:id', async (req, res) => {
       }
       
       // Parse response as JSON
-      const movieDetails = await response.json();
-      
+      const movieDetails = await response;
+
+      if (movieDetails.size == 0){
+        graylog.error('Error fetching movie details: movie detail result is empty');
+      } else {
+        graylog.log('Movie details fetched successfully', { movieDetails });
+      }
+
       // Log the movie details
-      graylog.log('Movie details fetched successfully', { movieDetails });
+      
   
       // Send the movie details in the response
       res.json({ details: movieDetails });
