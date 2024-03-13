@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 // Create a new Graylog client
 const graylog = new graylog2.graylog({
   servers: [{ 'host': '127.0.0.1', port: 12201 }],
-  hostname: 'your-hostname', // Optional
+  hostname: 'sample-app-host', // Optional
   facility: 'express-app', // Optional
 });
 

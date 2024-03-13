@@ -80,7 +80,6 @@ function loadMovieDetails() {
                     resultGrid.innerHTML = "<p>Movie details not found</p>";
                 }
             } catch (error) {
-                console.error('Error loading movie details:', error);
                 resultGrid.innerHTML = "<p>An error occurred while loading movie details. Please try again later.</p>";
             }
         });
