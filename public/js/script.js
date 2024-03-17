@@ -14,7 +14,6 @@ async function loadMovies(searchTerm) {
             searchList.innerHTML = "<p>No movies found</p>";
         }
     } catch (error) {
-        console.error('Error fetching movies:', error);
         searchList.innerHTML = "<p>An error occurred. Please try again later.</p>";
     }
 }
@@ -77,10 +76,10 @@ function loadMovieDetails() {
                 if (data && data.details) {
                     displayMovieDetails(data.details);
                 } else {
-                    resultGrid.innerHTML = "<p>Movie details not found</p>";
+                    resultGrid.innerHTML = "<p>not found</p>";
                 }
             } catch (error) {
-                resultGrid.innerHTML = "<p>An error occurred while loading movie details. Please try again later.</p>";
+                resultGrid.innerHTML = "<p>An error occurred Please try again later.</p>";
             }
         });
     });
